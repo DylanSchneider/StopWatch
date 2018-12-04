@@ -45,7 +45,7 @@ public:
    }
    
    bool Expired() {
-      return mExpired.load();
+      return mExpired.load(std::memory_order_release);
    }
 
    void Reset() {
